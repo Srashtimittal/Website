@@ -80,10 +80,13 @@ DATABASES = {
         'NAME': 'Mindstrong',
         'USER': 'postgres',
         'PASSWORD': 'DAkQ@#45',
-        'HOST': 'localhost'
+        'HOST': '*'
     }
 }
+import dj_database_url
 
+db_from_env = dj_database_url.config()
+DATABASES['default'].update()
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
