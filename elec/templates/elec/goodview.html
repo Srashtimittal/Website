@@ -1,0 +1,203 @@
+{% extends 'elec/first.html' %}
+{% block css %}
+nav{
+background-color:#10b9cc;
+}
+h6{
+color:red;
+}
+.card{
+border:white 1px;
+}
+h5{
+font-size:16px;
+}
+.km{
+position:absolute;
+top:25%;
+left:63%;
+border-radius:9px;
+
+}
+#cu{
+width:300.1px;
+height:29px;
+border-radius:7px;
+border:white;
+padding:10px;
+}
+.navbar-brand{
+color:white;
+font-size:25px;
+}
+#popcart{
+
+border-radius:7px;
+}
+.nav-link{
+color:white;
+text-shadow:#9CC3D5FF;
+}
+.navbarSupportedContent{
+word-spacing:15px;
+}
+a:hover{
+color:white;
+}
+.col-md-3
+{
+display: inline-block;
+margin-left:-4px;
+}
+.carousel-indicators .active {
+background-color: white;
+}
+.col-md-3 img{
+width: 170px;
+height: 200px;
+}
+body .carousel-indicator li{
+background-color: blue;
+}
+body .carousel-indicators{
+bottom: -40px;
+}
+.carousel-indicators li {
+
+
+background-color: #7270fc;
+}
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon{
+background-color: white;
+}
+.carousel-control-prev,
+.carousel-control-next{
+top: auto;
+bottom: auto;
+padding-top: 222px;
+}
+body .no-padding{
+padding-left: 0,
+padding-right: 0;
+}
+.btn-primary{
+background-image:linear-gradient(to right, #10b9cc , #0b397d);
+border:#5F4B8BFF;
+border-radius:4px;
+text-decoration:none;
+}
+.d-block{
+margin-top:18px;
+height:420px;
+}
+#carouselExampleIndicators{
+margin-bottom:90px;
+}
+h1{
+margin-bottom:70px;
+color:blue;
+}
+h1{
+color:#0b397d;
+font-weight:bold;
+}
+#bp{
+
+margin-top:-55px;
+margin-left:-270px;
+}
+#add{
+margin-left:-400px;
+margin-top:-75px;
+color: #0b397d;
+}
+#rate{
+color:red;
+}
+#pur{
+width:160px;
+height:46px;
+}
+.co{
+color: #0b397d;
+}
+{% endblock %}
+
+{% block title%} {{item.it_name}} {% endblock %}
+{% block body %}
+<div class="container my-4">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="row">
+        <img src="/media/{{good.image}}" width="300px" height="305px">
+    </div>
+
+
+    </div>
+
+    <div class="col-md-8">
+        <h4 class="co"><b>{{good.goo_name}}</b></h4>
+        <h4 id="rate"><b>&#x20B9;{{good.price}} </b></h4> <br>
+         <h4 class="co">   Specifications:</h4> <br>
+        <h5 class="co"> Brand  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mindstrong  </h5> <br>
+        <h5 class="co"> Display Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{good.sub_category1}}</h5> <br>
+          <h5 class="co"> Power Supply&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{good.sub_category2}}</h5> <br>
+          <h5 class="co"> Voltage Or Current&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{good.sub_category3}}</h5> <br>
+          <h5 class="co"> Phase&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{good.sub_category4}}</h5> <br>
+<div class="row">
+            <h6 id="add"> To buy this, first Add to Cart this item from <br>&nbsp;homepage then click on proceed to buy</h6>
+     <a href="/elec/checkout" id="bp"> <br><button class="btn btn-primary mx-3"id="pur">Proceed to Buy</button></a>
+
+             </div>
+
+
+    </div>
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+{% block js %}
+<script>
+console.log('working');
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+}
+else
+{
+cart[idstr] = 1;
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+});
+$('#popcart').popover();
+document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+</script>
+{% endblock %}

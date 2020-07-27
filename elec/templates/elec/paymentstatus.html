@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status</title>
+    <style>
+        #suc{
+        color:green;
+        }
+        #fl{
+        color:red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    {{response}}
+    <div class="col my-4">
+
+        <h1><center>Payment status regarding your Order  <hr></center></h1> <br> <br>
+        {% if response.RESPCODE == '01' %}
+        <center> <h2 id="succ"><b> ORDER SUCCESS </b></h2> </center>
+        {% else %}
+        <center> <h2 id="fl"> <b> ORDER FAILURE </b> </h2></center>
+        {% endif%}
+
+    </div>
+</div>
+</body>
+</html>
