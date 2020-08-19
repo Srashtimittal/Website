@@ -10,7 +10,7 @@ class Good(models.Model):
     sub_category4 = models.CharField(max_length=100, default="")
     pub_date = models.DateField()
     price = models.IntegerField(default=0)
-    image = models.ImageField(upload_to="elec/images", default="")
+    image = models.ImageField(upload_to="static/elec", default="")
     def __str__(self):
         return self.goo_name
 
