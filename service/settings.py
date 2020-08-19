@@ -25,7 +25,7 @@ SECRET_KEY = 'suxeirfgwmy8xf71p($dz2$ixz@0_o%i17hcbqwhr5697x_#-t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mindstrongitservices.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
