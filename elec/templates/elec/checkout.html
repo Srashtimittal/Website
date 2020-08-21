@@ -1,14 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-      <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+{% extends 'elec/first.html' %}
 
-  </head>
-  <body>
+{% block body %}
 <div class="container">
     <div class="col my-4">
         <h2>Step 1 - My Awesome Cart Express Checkout - Review Your Cart Items</h2>
@@ -72,7 +64,8 @@
         </form>
     </div>
 </div>
-
+{% endblock %}
+{% block js %}
 <script>
 if (localStorage.getItem('cart') == null) {
     var cart = {};
@@ -110,6 +103,4 @@ document.location = "/elec/checkout";
 {% endif %}
 $('#amount').val($('#totalPrice').html())
 </script>
-
-  </body>
-</html>
+{% endblock %}
