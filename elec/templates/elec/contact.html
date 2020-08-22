@@ -1,5 +1,14 @@
-{% extends 'elec/first.html' %}
-{% block css %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>{% block title%} {% endblock %}</title>
+     <style>
 nav{
 background-color:#10b9cc;
 }
@@ -65,9 +74,9 @@ text-decoration:none;
 h3{
 color:#2BB6F9;
 }
-{% endblock %}
-{% block title%} Contact Us - My Awesome Cart{% endblock %}
-{% block body %}
+</style>
+  </head>
+  <body>
 <div class="container my-3">
     <h3>Contact Us</h3>
     <form action="contact" method="post"> {% csrf_token %}
@@ -105,4 +114,5 @@ color:#2BB6F9;
 
 
 </div>
-{% endblock %}
+  </body>
+</html>
