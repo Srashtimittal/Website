@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Kurale&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Denk+One&display=swap" rel="stylesheet">
 
     <title>{% block title%} {% endblock %}</title>
      <style>
@@ -17,21 +19,23 @@ width:100%;
 overflow:hidden;
 }
 #ko{
-margin-left:90px;
+margin-left:0;
 font-size:31px;
-color:#0b397d;
+color:white;
 font-weight:bold;
+font-family: 'Kurale', serif;
 }
 #gz{
-color:#0b397d;
+color:white;
 font-weight:bold;
 }
 #g{
-color:#0b397d;
+color:white;
 font-weight:bold;
+margin-left:350px;
 }
 #home{
-color:#0b397d;
+color:white;
 font-size:18px;
 font-weight:bold;
 }
@@ -40,7 +44,7 @@ color:white;
 font-size:21px;
 }
 #abo{
-color:#0b397d;
+color:white;
 font-size:18px;
 font-weight:bold;
 }
@@ -49,7 +53,7 @@ color:white;
 font-size:21px;
 }
 #tra{
-color:#0b397d;
+color:white;
 font-size:18px;
 font-weight:bold;
 }
@@ -58,7 +62,7 @@ color:white;
 font-size:21px;
 }
 #cont{
-color:#0b397d;
+color:white;
 font-weight:bold;
 font-size:18px;
 }
@@ -72,7 +76,7 @@ font-size:21px;
   <body>
 
     <nav class="navbar navbar-expand-lg ">
-  <h3 id="ko">Mindstrong IT Services Private Limited&nbsp;&nbsp;&nbsp;</h3>
+        <h3 id="ko"> Mindstrong IT Services Private Limited </h3>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -81,8 +85,8 @@ font-size:21px;
       {% if user.is_authenticated %}
       <div class="collapse navbar-collapse" >
       <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-          &nbsp; &nbsp;&nbsp; &nbsp;<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person-check-fill" fill="#0b397d" xmlns="http://www.w3.org/2000/svg">
+      <li class="nav-item active" id="ml">
+          &nbsp; &nbsp;&nbsp; &nbsp;<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person-check-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9.854-2.854a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
 </svg><br> Hello, {{ user.first_name }}
       </li>
@@ -99,7 +103,7 @@ font-size:21px;
        <div class="collapse navbar-collapse" >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-       <a class="nav-link" id="g" href="/elec/login"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="#0b397d" xmlns="http://www.w3.org/2000/svg">
+       <a class="nav-link" id="g" href="/elec/login"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="white" xmlns="http://www.w3.org/2000/svg">
   <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
   <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
   <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>

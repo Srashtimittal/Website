@@ -3,6 +3,7 @@
 
 nav{
 background-color:#10b9cc;
+height:60px;
 }
 h6{
 color:red;
@@ -18,6 +19,11 @@ position:absolute;
 top:25%;
 left:63%;
 border-radius:9px;
+
+}
+#bn{
+font-family: 'Cuprum', sans-serif;
+font-size:19px;
 
 }
 #cu{
@@ -90,20 +96,19 @@ text-decoration:none;
 }
 .d-block{
 margin-top:18px;
-height:400px;
+height:420px;
 }
 #carouselExampleIndicators{
 margin-bottom:90px;
 }
-h1{
-margin-bottom:70px;
-color:blue;
-}
+
 h1{
 color:#0b397d;
-font-weight:bold;
+font-family: 'Amaranth', sans-serif;
+
 }
 #nj{
+
 display:flex;
 width:100%;
 height:360px;
@@ -130,12 +135,17 @@ color:white;
 color:#0b397d;
 padding-bottom:12px;
 padding-top:40px;
+font-family: 'Gelasio', serif;
+font-weight:bold;
 }
 .bot{
 font-size:16px;
 color:yellow;
-
 padding-bottom:10px;
+}
+.card-img-top{
+background-color:#F5FBFB;
+
 }
 {% endblock %}
 
@@ -218,7 +228,7 @@ padding-bottom:10px;
     </div>
     {% endfor %}
 </div>
-<footer id="nj">
+<div id="nj">
     <table id="tab">
     <tr>
 <td>
@@ -253,7 +263,7 @@ padding-bottom:10px;
     </tr>
     </table>
 
-</footer>
+</div>
 
 {% endblock %}
 {% block js %}
