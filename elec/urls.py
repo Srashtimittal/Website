@@ -9,7 +9,6 @@ urlpatterns = [
     path("elec/login", views.login, name="login"),
     path("elec/logout", views.logout, name="logout"),
     path("elec/about", views.about, name="about"),
-    path("elec/tracker", views.tracker, name="tracker"),
     path("elec/checkout", views.checkout, name="checkout"),
     path("elec/yui", views.yui, name="yui"),
     path("search/", views.search, name="search"),

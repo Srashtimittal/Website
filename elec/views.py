@@ -88,24 +88,6 @@ def logout(request):
 def about(request):
     return render(request, 'elec/about.html')
 
-def tracker(request):
-    if request.method == "POST":
-        orderId = request.POST.get('orderId', '')
-        email = request.POST.get('email', '')
-        try:
-            order = Order.objects.filter(order_id=orderId, email=email)
-            if len(order)>0:
-                update = OrderUpdate.objects.filter(order_id=orderId)
-                updates = []
-                for item in update:
-                    updates.append({'text': item.update_desc, 'time': item.timestamp})
-                    response = json.dumps([updates, order[0].items_json], default=str)
-                return HttpResponse(response)
-            else:
-                return HttpResponse('{}')
-        except Exception as e:
-            return HttpResponse('{}')
-    return render(request, 'elec/tracker.html')
 
 def checkout(request):
     if request.method == "POST":
