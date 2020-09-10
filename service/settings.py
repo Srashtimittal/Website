@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storages',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'services',
         'USER': 'mindstrong',
-        'PASSWORD': 'alluringhjj',
+        'PASSWORD': 'mserviceltd',
         'HOST': 'database-1.ceagjbp4x38a.us-east-1.rds.amazonaws.com',
         'PORT': '5432'
     }

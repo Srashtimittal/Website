@@ -13,5 +13,4 @@ urlpatterns = [
     path("elec/checkout", views.checkout, name="checkout"),
     path("elec/yui", views.yui, name="yui"),
     path("search/", views.search, name="search"),
-    path("elec/handlerequest/", views.handlerequest, name="HandleRequest"),
 ]
