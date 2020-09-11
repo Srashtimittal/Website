@@ -1,4 +1,16 @@
-{% extends 'elec/first.html' %}
+{% extends 'elec/third.html' %}
+{% block css %}
+nav{
+background-image:linear-gradient(to left, #10b9cc , #0b397d);
+height:60px;
+}
+.btn-primary{
+background-image:linear-gradient(to right, #10b9cc , #0b397d);
+border:#5F4B8BFF;
+border-radius:4px;
+text-decoration:none;
+}
+{% endblock %}
 {% block body %}
 <div class="container">
     <div class="col my-4">
@@ -81,5 +93,40 @@ $('#trackerForm').submit(function(event) {
         });
     event.preventDefault();
 });
+if (localStorage.getItem('cart') == null) {
+    var cart = {};
+} else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+}
+console.log(cart);
+var sum = 0;
+var totalPrice = 0;
+if ($.isEmptyObject(cart)) {
+    //if object is empty
+    mystr = `<p>Your cart is empty, please add some items to your cart before checking out!</p>`
+    $('#items').append(mystr);
+} else {
+    for (item in cart) {
+        let name = cart[item][1];
+        let qty = cart[item][0];
+        let itemPrice = cart[item][2];
+        sum = sum + qty;
+        totalPrice = totalPrice + qty* itemPrice;
+        mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${name}
+                    <span class="badge badge-primary badge-pill">${qty}</span>
+                </li>`
+        $('#items').append(mystr);
+    }
+}
+document.getElementById('cart').innerHTML = sum;
+document.getElementById('totalPrice').innerHTML = totalPrice;
+$('#itemsJson').val(JSON.stringify(cart));
+{% if thank %}
+alert('Thanks for ordering with us. Your order is is {{id}}. Use it to track your order using our order tracker');
+localStorage.clear();
+document.location = "/elec/checkout";
+{% endif %}
+$('#amount').val($('#totalPrice').html())
 </script>
 {% endblock %}
