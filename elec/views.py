@@ -8,7 +8,7 @@ import logging
 logger = logging.getLogger(__name__)
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
-MERCHANT_KEY = 'Your Merchant Key';
+
 
 def start(request):
         allIts = []
@@ -122,16 +122,6 @@ def checkout(request):
         order.save()
         thank = True
         id = order.order_id
-        param_dict = {
-            'MID': '',
-            'ORDER_ID': str(order.order_id),
-            'TXN_AMOUNT': str(amount),
-            'CUST_ID': email,
-            'INDUSTRY_TYPE_ID': 'Retail',
-            'WEBSITE': 'WEBSTAGING',
-            'CHANNEL_ID': 'WEB',
-            'CALLBACK_URL': 'http://127.0.0.1:8000/elec/handlerequest/',
-        }
 
     return render(request, 'elec/checkout.html')
 
