@@ -11,26 +11,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Amaranth&display=swap" rel="stylesheet">  <title>{% block title%} {% endblock %}</title>
       <style>
-.navbar navbar-expand-lg{
+.navbar-expand-lg{
 margin:0;
 padding:0;
 width:100%;
-
-overflow:hidden;
+height:70px;
 }
 #ko{
 margin-left:0;
-font-size:31px;
-color:#0b397d;
+font-size:28px;
+color:white;
 font-weight:bold;
 font-family: 'Kurale', serif;
 }
 #gz{
-color:#0b397d;
+color:white;
 font-weight:bold;
 }
 #g{
-color:#0b397d;
+color:white;
 font-weight:bold;
 }
 #pp{
@@ -38,40 +37,96 @@ color:#0b397d;
 
 }
 #home{
-color:#0b397d;
+color:white;
 font-size:18px;
 font-weight:bold;
 }
 #home:hover{
-color:white;
+color:black;
 font-size:21px;
+background-color:#5dd55d;
+padding-left:60px;
 }
 #abo{
-color:#0b397d;
+color:white;
 font-size:18px;
 font-weight:bold;
 }
 #abo:hover{
-color:white;
+color:black;
 font-size:21px;
+background-color:#5dd55d;
+padding-left:60px;
 }
 #tra{
-color:#0b397d;
+color:white;
 font-size:18px;
 font-weight:bold;
 }
 #tra:hover{
-color:white;
+color:black;
 font-size:21px;
+background-color:#5dd55d;
+padding-left:60px;
 }
 #cont{
-color:#0b397d;
+color:white;
 font-weight:bold;
 font-size:18px;
 }
+.gud{
+background-color:#3366cc;
+margin-top:0px;
+height:45px;
+}
 #cont:hover{
-color:white;
+color:black;
 font-size:21px;
+background-color:#5dd55d;
+padding-left:60px;
+}
+.search{
+width:300px;
+}
+@media only screen and (min-width:993px) and (max-width:1196px) {
+
+#ko{
+font-size:20px;
+}
+#home{
+font-size:14px;
+}
+#abo{
+font-size:14px;
+}
+#tra{
+
+font-size:14px;
+}
+#cont{
+font-size:14px;
+}
+#gz{
+font-size:18px;
+}
+#g{
+font-size:18px;
+}
+#pp{
+font-size:18px;
+}
+
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+   #ko{
+   font-size:11px;
+   }
+
+}
+@media only screen and (max-width:909px) {
+html,body{
+    overflow-x: hidden;
+}
 }
        {% block css %} {% endblock %}
   </style>
@@ -79,72 +134,69 @@ font-size:21px;
   <body>
 
     <nav class="navbar navbar-expand-lg ">
-  <h3 id="ko">Mindstrong IT Services Private Limited&nbsp;&nbsp;&nbsp;</h3>
+  <h3 id="ko">Mindstrong IT Services Private Limited &nbsp;&nbsp;</h3>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" >
+
     <form method='get' action="search" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
-      <button class="btn btn-primary my-2 my-sm-0" type="submit"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <button class="btn btn-primary my-2 my-sm-0" type="submit" id="wy"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
   <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
 </svg> Search</button>
     </form>
-  </div>
+
       {% if user.is_authenticated %}
-      <div class="collapse navbar-collapse" >
       <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-          <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person-check-fill" fill="#0b397d" xmlns="http://www.w3.org/2000/svg">
+          <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person-check-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9.854-2.854a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
 </svg><br> Hello, {{ user.first_name }}
       </li>
       </ul>
-      </div>
-      <div class="collapse navbar-collapse" >
+
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-       <a class="nav-link" href="/elec/logout" id="pp"> &nbsp; &nbsp; <br>Logout  &nbsp;</a>
+       <a class="nav-link" href="/elec/logout" id="pp"> <br>Logout  </a>
       </li>
     </ul>
-      </div>
+
       {% else %}
-       <div class="collapse navbar-collapse" >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-       <a class="nav-link" id="g" href="/elec/login"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="#0b397d" xmlns="http://www.w3.org/2000/svg">
+       <a class="nav-link" id="g" href="/elec/login"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="white" xmlns="http://www.w3.org/2000/svg">
   <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
   <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
   <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-</svg> <br> Hi! Sign in &nbsp; &nbsp;</a>
+</svg> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hi! Sign in </a>
       </li>
     </ul>
-      </div>
-      <div class="collapse navbar-collapse" >
+
+
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-       <a class="nav-link" id="gz" href="/elec/register"> <br>Sign up &nbsp; &nbsp;</a>
+       <a class="nav-link" id="gz" href="/elec/register"> <br>Sign up</a>
       </li>
       {% endif %}
     </ul>
-      </div>
 
-       <div class="collapse navbar-collapse" >
+
+
 <button type="button" class="btn btn-primary" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus
 sagittis lacus vel augue laoreet rutrum faucibus.">
 
   <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-cart3" fill="white" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-</svg>   Cart(<span id="cart">0</span>)
+</svg>Cart(<span id="cart">0</span>)
 </button>
-  </div>
+
 </nav>
-     <nav class="navbar navbar-expand-lg "  id="navbarSupportedContent">
-  <div class="collapse navbar-collapse" >
+     <nav class="navbar navbar-expand-lg gud"  id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
+
         <a class="nav-link" id="home" href=" "> Home &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -161,7 +213,6 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 
 
     </ul>
-  </div>
      </nav>
 
   {% block body %} {% endblock %}

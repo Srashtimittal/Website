@@ -6,25 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
-
     <style>
-body{
+*{
 margin:0;
 padding:0;
 }
 
 .hj{
-width:300px;
-height:350px;
-background-image:linear-gradient(to left, #10b9cc , #0b397d);
-margin:65px;
+width:400px;
+height:400px;
+background-color:#3366cc;
+margin:43px;
 padding:10px;
 display:flex;
 border-radius:11px;
 }
 input{
-margin-left:43px;
+margin-top:50px;
+margin-left:-140px;
 display:flex;
 align-items:center;
 width:200px;
@@ -32,56 +31,53 @@ height:30px;
 border-radius:5px;
 border:#826EFC 2px;
 padding-left:10px;
-margin-top:48px;
-margin-bottom:10px;
 background-color:white;
 }
 h3{
-display:flex;
-flex-direction:column;
-margin-right:70px;
+padding-left:140px;
+padding-top:10px;
 color:white;
 }
 button{
+margin-top:12px;
+margin-left:-140px;
+display:flex;
+align-items:center;
 width:200px;
 height:30px;
-margin-left:43px;
-border-radius:20px;
-background-color:#00cc66;
+border-radius:30px;
+border:2px #7dde5d;
+padding-left:70px;
+background-color:#5dd55d;
 color:white;
-border:#826EFC 2px;
-font-size:15px;
+font-size:18px;
 font-weight:bold;
 }
 h1{
 color:#6600cc;
 }
-.dt{
-width:100%;
-height:50px;
-background-image:linear-gradient(to left, #10b9cc , #0b397d);
-display:flex;
-flex-direction:column;
-align-items:center;
-font-size:35px;
-color:white;
+.hj{
+    transition:all 0.5s cubic-bezier(0.175, 0.885, 0, 1);
+
+    border-radius:12px;
+    box-shadow:0px 13px 10px -7px rgba(0, 0, 0, 0.1);
 }
-#sub{
-padding-top:1px;
-}
+.hj:hover {
+    box-shadow:0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05, 1.05);
+
     </style>
 </head>
 <body>
-<div class="dt">
-    Sign in
-</div>
+
 <center>
     <div class="hj">
-    <form action="login" method="post"> {% csrf_token %}
-
+        <h3> Sign In </h3>
+<form action="login" method="post"> {% csrf_token %}
+<br> <br>
      <input type="text" name="username" placeholder="Enter username">
        <input type="password" name="password" placeholder="Enter password"> <br> <br>
-        <button type="submit" id="sub" class="btn btn-success" > Login</button>
+    <button> Submit </button>
     </form>
         </div>
     <div>
